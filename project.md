@@ -52,10 +52,10 @@ I started off with linear regression, whose REC curve (see above) shows a more g
 
 Before determining the MLP plot as the perfect plot, see the RMSEs below:
 
-RMSE for MLPRegressor: 0.4058990277661763
-RMSE for SVR: 0.31478938771565534
-RMSE for Decision Tree Regressor: 0.40938054133445984
-RMSE for linear regression: 0.3025195408360982
+* RMSE for MLPRegressor: 0.4058990277661763
+* RMSE for SVR: 0.31478938771565534
+* RMSE for Decision Tree Regressor: 0.40938054133445984
+* RMSE for linear regression: 0.3025195408360982
 
 The linear regression model with Ridge regularization has the lowest RMSE of 0.3025, making it the best performing model in terms of RMSE among the ones listed. This indicates that, on average, the predictions made by the Linear Regression model are closer to the actual values than those made by the other models.
 
