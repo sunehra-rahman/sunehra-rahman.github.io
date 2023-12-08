@@ -1,21 +1,38 @@
-## My Project
+## Supervised Regression: Predicting Alcohol Consumption and Liver Disorders
 
-I applied machine learning techniques to investigate... Below is my report.
-
+This report presents a supervised regression approach to predict alcohol consumption that may lead to liver disorders using a dataset provided by BUPA Medical Research Ltd. This dataset contains blood test results and the number of alcoholic beverages consumed per day.
 ***
 
 ## Introduction 
 
-Here is a summary description of the topic. Here is the problem. This is why the problem is important.
-
-There is some dataset that we can use to help solve this problem. This allows a machine learning approach. This is how I will solve the problem using supervised/unsupervised/reinforcement/etc. machine learning.
+Excessive alcohol consumption is a leading cause of liver disorders. Machine learning models can assist healthcare professionals in identifying patients who may benefit from alcohol-related interventions and reduce the burden of liver disorders.
 
 We did this to solve the problem. We concluded that...
 
 ## Data
 
-Here is an overview of the dataset, how it was obtained and the preprocessing steps taken, with some plots!
+The machine learning approach used in this study involves several steps, including data preprocessing, model selection, training, evaluation, and comparison. The primary steps are explained below:
 
+# Data Preprocessing
+
+Log Transformation: The target variable, "drinks," representing the number of alcoholic beverages consumed, is log-transformed to mitigate the impact of outliers and achieve a more normal distribution of the target variable.
+
+Data Splitting: The dataset is split into training and testing sets, with 70% of the data used for training and 30% for testing.
+
+# Model Selection and Training
+
+Three regression models are selected and trained on the training data:
+
+Linear Regression: A linear regression model with Ridge regularization is used to predict alcohol consumption.
+![](assets/IMG/datapenguin.png){: width="500" }
+
+Support Vector Regression (SVR): SVR with a linear kernel is employed as a non-linear regression model.
+
+Decision Tree Regressor: A decision tree regressor is utilized as a non-linear regression model.
+
+![](assets/IMG/datapenguin.png){: width="500" }
+
+Multi-layer Perceptron (MLP) Regressor: An MLP regressor with two hidden layers is applied to capture complex relationships in the data.
 ![](assets/IMG/datapenguin.png){: width="500" }
 
 *Figure 1: Here is a caption for my diagram. This one shows a pengiun [1].*
