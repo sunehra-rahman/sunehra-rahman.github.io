@@ -17,10 +17,10 @@ The machine learning approach used in this study involves several steps, includi
 
 Log Transformation: The target variable, "drinks," representing the number of alcoholic beverages consumed, is log-transformed to mitigate the impact of outliers and achieve a more normal distribution of the target variable.
 
-![](assets/IMG/before.png){: width="300" }
+![](assets/IMG/before.png){: width="200" }
 *before preprocessing*
 
-![](assets/IMG/preprocess.png){: width="300" }
+![](assets/IMG/preprocess.png){: width="200" }
 *after preprocessing*
 
 Data Splitting: The dataset is split into training and testing sets, with 70% of the data used for training and 30% for testing.
@@ -30,16 +30,16 @@ Data Splitting: The dataset is split into training and testing sets, with 70% of
 Three regression models are selected and trained on the training data:
 
 Linear Regression: A linear regression model with Ridge regularization is used to predict alcohol consumption.
-![](assets/IMG/linear.png){: width="300" }
+![](assets/IMG/linear.png){: width="200" }
 
 Support Vector Regression (SVR): SVR with a linear kernel is employed as a non-linear regression model.
 
 Decision Tree Regressor: A decision tree regressor is utilized as a non-linear regression model.
 
-![](assets/IMG/svr.png){: width="300" }
+![](assets/IMG/svr.png){: width="200" }
 
 Multi-layer Perceptron (MLP) Regressor: An MLP regressor with two hidden layers is applied.
-![](assets/IMG/neural.png){: width="300" }
+![](assets/IMG/neural.png){: width="200" }
 
 
 ## Modelling
