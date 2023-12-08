@@ -5,9 +5,7 @@ This report presents a supervised regression approach to predict alcohol consump
 
 ## Introduction 
 
-Excessive alcohol consumption is a leading cause of liver disorders. Machine learning models can assist healthcare professionals in identifying patients who may benefit from alcohol-related interventions and reduce the burden of liver disorders.
-
-We did this to solve the problem. We concluded that...
+Excessive alcohol consumption is a leading cause of liver disorders. Machine learning models can assist healthcare professionals in identifying patients who may benefit from alcohol-related interventions and reduce the burden of liver disorders. This project utilizes supervised regression to predict a continuous target variable (in this case, alcohol consumption) based on input features (blood test results).
 
 ## Data
 
@@ -25,6 +23,8 @@ Log Transformation: The target variable, "drinks," representing the number of al
 
 Data Splitting: The dataset is split into training and testing sets, with 70% of the data used for training and 30% for testing.
 
+## Modelling
+
 # Model Selection and Training
 
 Three regression models are selected and trained on the training data:
@@ -41,42 +41,32 @@ Decision Tree Regressor: A decision tree regressor is utilized as a non-linear r
 Multi-layer Perceptron (MLP) Regressor: An MLP regressor with two hidden layers is applied.
 ![](assets/IMG/neural.png){: width="100" }
 
+For model evaluation, the following metrics are used:
 
-## Modelling
-
-Here are some more details about the machine learning approach, and why this was deemed appropriate for the dataset. 
-
-The model might involve optimizing some quantity. You can include snippets of code if it is helpful to explain things.
-
-```python
-from sklearn.ensemble import ExtraTreesClassifier
-from sklearn.datasets import make_classification
-X, y = make_classification(n_features=4, random_state=0)
-clf = ExtraTreesClassifier(n_estimators=100, random_state=0)
-clf.fit(X, y)
-clf.predict([[0, 0, 0, 0]])
-```
-
-This is how the method was developed.
+Root Mean Squared Error (RMSE): To measure the accuracy of predictions.
+Relative Error Curve (REC): To assess the percentage of correct predictions within a specified tolerance level.
 
 ## Results
 
-Figure X shows... [description of Figure X].
+I started off with linear regression, whose REC curve (see above) shows a more gradual increase and reaches 100% correct predictions at a higher tolerance level compared to the MLP Regressor, which suggests it may not perform as well at lower tolerance levels. As on the REC curves above, the curve for the SVR model is slightly above the curve for the Decision Tree model, which suggests that the SVR model has a marginally better accuracy for smaller tolerances. The MLP Regressor plot, however, shows that the REC curve quickly reaches close to 100% of correct predictions at a lower tolerance compared to the Ridge Regression model, suggesting that it has a good fit to the training data.
 
-## Discussion
+Before determining the MLP plot as the perfect plot, see the RMSEs below:
 
-From Figure X, one can see that... [interpretation of Figure X].
+RMSE for MLPRegressor: 0.4058990277661763
+RMSE for SVR: 0.31478938771565534
+RMSE for Decision Tree Regressor: 0.40938054133445984
+RMSE for linear regression: 0.3025195408360982
+
+The linear regression model with Ridge regularization has the lowest RMSE of 0.3025, making it the best performing model in terms of RMSE among the ones listed. This indicates that, on average, the predictions made by the Linear Regression model are closer to the actual values than those made by the other models.
 
 ## Conclusion
 
-Here is a brief summary. From this work, the following conclusions can be made:
-* first conclusion
-* second conclusion
+It's interesting to note that the REC curves suggested the MLP Regressor might be the best model due to its rapid approach to a high percentage of correct predictions within a smaller tolerance. However, the RMSE values indicate that the Linear Regression model is actually the most accurate in predicting the target variable.
 
-Here is how this work could be developed further in a future project.
+RMSE is directly related to the accuracy of predictions, while REC curves provide insights into how well the model performs across different tolerance levels for errors. Therefore, if we prioritize RMSE as the performance metric, the Linear Regression model with Ridge regularization would be considered the best model for this specific task.
 
 ## References
-[1] DALL-E 3
+Liver Disorders. (1990). UCI Machine Learning Repository. https://doi.org/10.24432/C54G67.
 
 [back](./)
 
